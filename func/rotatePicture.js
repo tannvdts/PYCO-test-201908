@@ -1,15 +1,22 @@
+const { ROTATE_PICTURE } = require('./constants')
 /**
+ * Function rotate the photo on user request
+ * Input: 
+ *  - grid: n * n matrix
+ *  - k: number of rotations
+ * Output:
+ *  n * n matrix, which is rotated picture
  * Time Complexity: O(n^2)
  * Memory Complexity: O(n)
  */
 module.exports = (grid, k) => {
     // check params must be provided
-    if (grid === undefined && k === undefined) throw new TypeError('params is required');
+    if (grid === undefined && k === undefined) throw new TypeError(ROTATE_PICTURE.ERRORS.PARAMS_IS_REQUIRED);
     // check grid param must be array
-    if (!Array.isArray(grid)) throw new TypeError('grid must be array');
+    if (!Array.isArray(grid)) throw new TypeError(ROTATE_PICTURE.ERRORS.GRID_MUST_BE_ARRAY);
     
     // check grid param must be n*n matrix
-    const gridError = new RangeError('grid must be n*n matrix');
+    const gridError = new RangeError(ROTATE_PICTURE.ERRORS.GRID_MUST_BE_NN_MATRIX);
     const numRow = grid.length;
     if (numRow < 1) throw gridError;
     grid.forEach((row) => {
@@ -20,7 +27,7 @@ module.exports = (grid, k) => {
     })
 
     // check k must be integer >= 0
-    if (!Number.isInteger(k) || (Number.isInteger(k) && k < 0)) throw new TypeError('k must be integer >= 0');
+    if (!Number.isInteger(k) || (Number.isInteger(k) && k < 0)) throw new TypeError(ROTATE_PICTURE.ERRORS.K_MUST_BE_WHOLE_NUMBER);
 
     // We really have only 4 rotation state of the picture: 
     // 0: initial state of picture

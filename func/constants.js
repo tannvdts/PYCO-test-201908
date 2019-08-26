@@ -7,5 +7,13 @@ module.exports = {
             K_MUST_BE_POSITIVE_INTEGER: 'k must be integer > 0',
             DEPARTURE_MUST_GREATER_THAN_ARRIVAL: 'departure must > arrival in a booking'
         }
+    },
+    ROTATE_PICTURE: {
+        ERRORS: {
+            PARAMS_IS_REQUIRED: 'params is required',
+            GRID_MUST_BE_ARRAY: 'grid must be array',
+            GRID_MUST_BE_NN_MATRIX: 'grid must be n*n matrix',
+            K_MUST_BE_WHOLE_NUMBER: 'k must be integer >= 0'
+        }
     }
 }

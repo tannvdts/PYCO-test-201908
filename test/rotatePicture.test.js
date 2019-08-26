@@ -1,4 +1,5 @@
 const rotatePicture = require('../func/rotatePicture');
+const { ROTATE_PICTURE } = require('../func/constants');
 const chai = require('chai');
 const expect = chai.expect;
 
@@ -8,19 +9,19 @@ describe('#PYCO Test 201908', () => {
     it('should throw exception when grid or k not provided', () => {
         expect(() => {
             rotatePicture();
-        }).to.throw(TypeError, 'params is required');
+        }).to.throw(TypeError, ROTATE_PICTURE.ERRORS.PARAMS_IS_REQUIRED);
     });
 
     it('should throw exception when grid param is not array', () => {
         expect(() => {
             rotatePicture('foo', 1);
-        }).to.throw(TypeError, 'grid must be array');
+        }).to.throw(TypeError, ROTATE_PICTURE.ERRORS.GRID_MUST_BE_ARRAY);
     });
 
     it('should throw exception when grid param is not interger >=0', () => {
         expect(() => {
             rotatePicture([[1]], -1);
-        }).to.throw(TypeError, 'k must be integer >= 0');
+        }).to.throw(TypeError, ROTATE_PICTURE.ERRORS.K_MUST_BE_WHOLE_NUMBER);
     });
 
     it('should throw exception when grid is not n*n matrix', () => {
@@ -30,7 +31,7 @@ describe('#PYCO Test 201908', () => {
             rotatePicture([
                 []
             ], 0);
-        }).to.throw(RangeError);
+        }).to.throw(RangeError, ROTATE_PICTURE.ERRORS.GRID_MUST_BE_NN_MATRIX);
 
         // case row > col
         expect(() => {
