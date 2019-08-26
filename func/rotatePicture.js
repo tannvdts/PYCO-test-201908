@@ -1,3 +1,7 @@
+/**
+ * Time Complexity: O(n^2)
+ * Memory Complexity: O(n)
+ */
 module.exports = (grid, k) => {
     // check params must be provided
     if (grid === undefined && k === undefined) throw new TypeError('params is required');
