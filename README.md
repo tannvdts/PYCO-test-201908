@@ -5,11 +5,16 @@
 # Problems
 
   - Rotate picture
-         * Time Complexity: O(n^2)
-         * Memory Complexity: O(n)
+  ```sh
+  Time Complexity: O(n^2)
+  Memory Complexity: O(n)
+  ```
+         
   - Hotel Reservation
-        * Time Complexity: O(n)
-        * Memory Complexity: O(n)
+  ```sh
+Time Complexity: O(n)
+Memory Complexity: O(n)
+```
 
 
 
