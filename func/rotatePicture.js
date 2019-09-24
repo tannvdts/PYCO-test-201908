@@ -65,6 +65,5 @@ module.exports = (grid, k) => {
             }
             return result;
         }
-        default: return
     }
 }

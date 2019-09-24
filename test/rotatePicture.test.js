@@ -32,7 +32,10 @@ describe('#PYCO Test 201908', () => {
                 []
             ], 0);
         }).to.throw(RangeError, ROTATE_PICTURE.ERRORS.GRID_MUST_BE_NN_MATRIX);
-
+        expect(() => {
+            rotatePicture([], 0);
+        }).to.throw(RangeError, ROTATE_PICTURE.ERRORS.GRID_MUST_BE_NN_MATRIX);
+        
         // case row > col
         expect(() => {
             rotatePicture([
